@@ -118,7 +118,10 @@ const SmoothWheelZoom = Handler.extend({
  * @param {number} smoothSensitivity
  */
 export function enableSmoothZoom(map, smoothSensitivity = 1) {
-  map.options.scrollWheelZoom = false; // disable original zoom function
+  // disable original zoom function
+  map.options.scrollWheelZoom = false;
+  map.scrollWheelZoom.disable();
+
   map.options.smoothWheelZoom = true;
   map.options.smoothSensitivity = smoothSensitivity;
   map.addHandler("smoothWheelZoom", SmoothWheelZoom);
