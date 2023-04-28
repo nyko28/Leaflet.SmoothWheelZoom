@@ -1,8 +1,9 @@
 import { Map, Handler, DomEvent } from "leaflet";
 
-export const SmoothWheelZoom = Handler.extend({
+const SmoothWheelZoom = Handler.extend({
   addHooks: function () {
     DomEvent.on(this._map._container, "mousewheel", this._onWheelScroll, this);
+    console.log("HOOK ADDED")
   },
 
   removeHooks: function () {
@@ -119,8 +120,8 @@ export const SmoothWheelZoom = Handler.extend({
  */
 export function enableSmoothZoom(map, smoothSensitivity = 1) {
   // disable original zoom function
-  // map.options.scrollWheelZoom = false;
-  // map.scrollWheelZoom.disable();
+  map.options.scrollWheelZoom = false;
+  map.scrollWheelZoom.disable();
 
   map.options.smoothWheelZoom = true;
   map.options.smoothSensitivity = smoothSensitivity;
