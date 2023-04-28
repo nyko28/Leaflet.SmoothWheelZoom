@@ -2,11 +2,11 @@ import { Map, Handler, DomEvent } from "leaflet";
 
 const SmoothWheelZoom = Handler.extend({
   addHooks: function () {
-    DomEvent.on(this._map._container, "mousewheel", this._onWheelScroll, this);
+    DomEvent.on(this._map._container, "wheel", this._onWheelScroll, this);
   },
 
   removeHooks: function () {
-    DomEvent.off(this._map._container, "mousewheel", this._onWheelScroll, this);
+    DomEvent.off(this._map._container, "wheel", this._onWheelScroll, this);
   },
 
   _onWheelScroll: function (e) {
