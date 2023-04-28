@@ -11,6 +11,7 @@ const SmoothWheelZoom = Handler.extend({
   },
 
   _onWheelScroll: function (e) {
+    console.log("ON MOUSEWHEEL")
     if (!this._isWheeling) {
       this._onWheelStart(e);
     }
